@@ -1,1 +1,7 @@
-/Users/fudongli/data/silver_prices.csv
+timestamp,date,price_usd,source,url
+2026-02-03T14:25:27.996007,2026-02-03,50.06,Kitco,https://www.kitco.com/charts/livesilver.html
+2026-02-03T14:27:02.439025,2026-02-03,50.06,Kitco,https://www.kitco.com/charts/livesilver.html
+2026-02-03T14:39:15.241608,2026-02-03,50.06,Kitco,https://www.kitco.com/charts/livesilver.html
+2026-02-03T14:39:52.163978,2026-02-03,50.06,Kitco,https://www.kitco.com/charts/livesilver.html
+2026-02-03T14:44:43.173849,2026-02-03,50.06,Kitco,https://www.kitco.com/charts/livesilver.html
+2026-02-03T14:47:20.854714,2026-02-03,50.06,Kitco,https://www.kitco.com/charts/livesilver.html
