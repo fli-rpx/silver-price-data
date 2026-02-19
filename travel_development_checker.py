@@ -283,8 +283,8 @@ def check_in_changes_to_github():
     return True
 
 def check_and_import_new_tasks():
-    """Check for and import new tasks from SQL files if database is empty of pending tasks."""
-    print("🔍 Checking if we should import new tasks from SQL files...")
+    """Check for pending tasks - import script is NOT run automatically."""
+    print("🔍 Checking for pending tasks...")
     
     # First check current pending count
     cmd = """
@@ -298,21 +298,7 @@ def check_and_import_new_tasks():
     
     if returncode == 0 and stdout.strip().isdigit():
         pending_count = int(stdout.strip())
-        
-        # If no pending tasks, run import script
-        if pending_count == 0:
-            print("📥 No pending tasks found, running import script...")
-            import_script = "/Users/fudongli/clawd/import_development_tasks.py"
-            if os.path.exists(import_script):
-                returncode, stdout, stderr = run_command(f"python3 {import_script}")
-                if returncode == 0:
-                    print("✅ Import script completed")
-                else:
-                    print(f"⚠️ Import script had issues: {stderr}")
-            else:
-                print("❌ Import script not found")
-        else:
-            print(f"✅ Found {pending_count} pending task(s), skipping import")
+        print(f"📊 Found {pending_count} pending task(s)")
     else:
         print("❌ Could not check pending task count")
 
@@ -322,7 +308,7 @@ def main():
     print(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
     
-    # Check if we should import new tasks
+    # Check for pending tasks (import script is NOT run automatically)
     check_and_import_new_tasks()
     
     # Check for pending tasks
